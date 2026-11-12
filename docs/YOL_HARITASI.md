@@ -11,7 +11,7 @@
 | # | Gereksinim | Nasıl karşılanacak |
 |---|---|---|
 | 1 | Workflow aracı: **n8n** veya **Langflow**, self-hosted (Docker olabilir) | n8n, Docker Compose ile self-hosted |
-| 2 | LLM: Cloud API veya Local LLM | Cloud API (birincil) + Ollama (alternatif) |
+| 2 | LLM: Cloud API veya Local LLM | Google Gemini API (free tier) |
 | 3 | İş akışında: metin giriş/çıkış, LLM, konuşma geçmişi deposu | Chat Trigger → Guardrail → AI Agent → Yanıt; geçmiş PostgreSQL'de |
 | 4 | Türkçe dil desteği | Türkçe sistem promptu, Türkçe veri seti, çok dilli embedding modeli |
 | 5 | Açık veri setleri ile "eğitim" | **RAG** (Retrieval-Augmented Generation) ile bilgi tabanı |
@@ -47,18 +47,23 @@ Fine-tuning yerine RAG seçilir, çünkü:
 - RAG ile yanıtlar **kaynağa dayalı** olur, halüsinasyon azalır, kaynak gösterilebilir.
 - Bilgi tabanı model yeniden eğitilmeden güncellenebilir.
 
-### 2.3 LLM seçimi
+### 2.3 LLM seçimi: **Google Gemini API (Free Tier)** ✅ KARAR
 
-| Seçenek | Model | Not |
+| Kullanım | Model | n8n node'u |
 |---|---|---|
-| **Birincil (Cloud)** | OpenAI `gpt-4o-mini` / Google `gemini-2.x-flash` / Anthropic `claude-haiku` | Türkçe kalitesi yüksek, ucuz, hızlı |
-| Alternatif (Local) | Ollama + `qwen2.5:7b`, `gemma2:9b` / `gemma3` veya `llama3.1:8b` | Veri dışarı çıkmaz; Türkçe kalitesi daha düşük, GPU önerilir |
+| Sohbet (AI Agent) | Güncel Gemini **Flash** modeli (ör. `gemini-2.5-flash`) | *Google Gemini Chat Model* |
+| Guardrail sınıflandırma | Gemini **Flash-Lite** (daha hızlı, daha yüksek ücretsiz limit) | *Google Gemini Chat Model* |
+| Embedding (RAG) | `gemini-embedding-001` | *Embeddings Google Gemini* |
 
-**Embedding modeli (Türkçe için çok dilli olmalı):**
-- Cloud: `text-embedding-3-small` (OpenAI)
-- Local: `bge-m3` veya `multilingual-e5` (Ollama üzerinden `bge-m3`)
+- API anahtarı: https://aistudio.google.com → "Get API key" (kredi kartı gerekmez).
+- Ücretsiz katmanda dakikalık/günlük istek limitleri vardır → geliştirme ve demo için yeterli; toplu embedding yüklemede istekler arasına bekleme konulmalı.
 
-> Hem cloud hem local seçeneğini çalışır tutup bir karşılaştırma tablosu (doğruluk, hız, maliyet) raporlamak projeye ciddi değer katar.
+> [!WARNING]
+> Gemini **ücretsiz katmanında** gönderilen veriler Google tarafından ürün geliştirme amacıyla kullanılabilir. Bu nedenle testlerde **gerçek kişisel sağlık verisi kullanılmamalı** ve bu durum KVKK aydınlatma metninde ve raporda belirtilmelidir. Gerçek kullanıma geçilirse ücretli katman veya yerel LLM (Ollama) tercih edilmelidir.
+
+### 2.4 Çalışma ortamı: **Yerel bilgisayar (Docker Desktop)** ✅ KARAR
+
+"Self-hosted", hazır bulut servisi (n8n Cloud) yerine yazılımı **kendi makinende** çalıştırmak demektir; kiralık sunucu gerekmez. Tüm bileşenler (n8n, PostgreSQL, Qdrant) yerel bilgisayarda Docker Desktop ile çalışır, maliyet **0 TL**'dir. Sadece LLM çağrıları internet üzerinden Gemini API'ye gider.
 
 ---
 
@@ -70,7 +75,9 @@ Fine-tuning yerine RAG seçilir, çünkü:
 | Workflow | n8n (self-hosted) |
 | Konuşma geçmişi | PostgreSQL (n8n *Postgres Chat Memory*) |
 | Vektör veritabanı | Qdrant (alternatif: PostgreSQL + pgvector) |
-| LLM | OpenAI/Gemini API veya Ollama |
+| LLM | Google Gemini API (free tier) — Flash / Flash-Lite |
+| Embedding | `gemini-embedding-001` |
+| Çalışma ortamı | Yerel bilgisayar, Docker Desktop (sunucu yok) |
 | Arayüz | n8n Chat Trigger hosted chat → (opsiyonel) `@n8n/chat` widget'ı ile basit HTML sayfa |
 | Veri hazırlama | Python (requests, BeautifulSoup, pypdf, pandas) |
 | Test / değerlendirme | Python script + soru-cevap test seti (CSV/JSON) |
@@ -88,7 +95,7 @@ flowchart TD
     G -->|"Ağız-diş sağlığı"| A["AI Agent"]
     A <--> M[("PostgreSQL - Konuşma geçmişi")]
     A <--> V[("Qdrant - Bilgi tabanı (RAG)")]
-    A <--> L["LLM (Cloud API / Ollama)"]
+    A <--> L["LLM (Google Gemini API)"]
     A --> P["Son işlem: KVKK linki + profesyonele yönlendirme"]
     R1 --> O["Yanıt"]
     P --> O
@@ -268,7 +275,8 @@ flowchart LR
 
 | Risk | Önlem |
 |---|---|
-| Local LLM Türkçe kalitesi düşük | Birincil olarak cloud API; local sadece alternatif |
+| Gemini free tier istek limitleri | Guardrail'de Flash-Lite, embedding yüklemede bekleme/batch, hata durumunda tekrar deneme |
+| Free tier'da verinin Google tarafından kullanılabilmesi | Testlerde gerçek kişisel veri yok; KVKK metninde belirtilir |
 | LLM kurallara her zaman uymayabilir | Kritik kurallar Code node ile deterministik |
 | API anahtarı sızıntısı | `.env` gitignore'da, sadece `.env.example` commit edilir |
 | Telifli veri kullanımı | Yalnızca açık/izinli kaynaklar, lisanslar dokümante edilir |
@@ -288,3 +296,4 @@ flowchart LR
   git remote add origin https://gitlab.com/<kullanici>/<repo>.git
   git push -u origin main
   ```
+

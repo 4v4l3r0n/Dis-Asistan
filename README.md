@@ -12,3 +12,4 @@ Detaylı plan: [docs/YOL_HARITASI.md](docs/YOL_HARITASI.md)
 ## Kurulum
 
 _(Hafta 2'de doldurulacak)_
+
