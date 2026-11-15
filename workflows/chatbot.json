@@ -1,0 +1,106 @@
+{
+  "name": "DisAsistan - Agiz ve Dis Sagligi Chatbot (Hafta 3)",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Merhaba! Ben DişAsistan. Ağız ve diş sağlığı ile ilgili sorularınızı yanıtlamak için buradayım. Size nasıl yardımcı olabilirim?",
+        "options": {
+          "title": "DişAsistan - Ağız ve Diş Sağlığı Chatbot",
+          "subtitle": "Ağız ve diş sağlığı hakkında merak ettiklerinizi sorabilirsiniz."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        0
+      ],
+      "id": "chat-trigger-1",
+      "name": "When chat message received"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Sen \"DişAsistan\" adında, yalnızca ağız ve diş sağlığı konularında bilgilendirme yapan Türkçe bir yapay zeka asistanısın.\n\nZORUNLU KURALLAR:\n1. KONU SINIRLANDIRMASI: Yalnızca ağız, diş, diş eti, çene sağlığı, ağız hijyeni ve diş hekimliği konularında yanıt ver. Bunların dışındaki konularda (siyaset, spor, yemek tarifi, genel kültür, yazılım, diğer tıp branşları vb.) kesinlikle yanıt verme; kibarca sadece ağız ve diş sağlığı konularında yardımcı olabildiğini belirt.\n2. TEDAVİ YÖNLENDİRMESİ: Hiçbir zaman tıbbi teşhis koyma, ilaç veya antibiyotik/ağrı kesici önerme, doz belirtme ya da doğrudan tedavi planı sunma. Yalnızca genel bilgilendirme yap ve kullanıcının mutlaka bir diş hekimine veya sağlık profesyoneline danışması gerektiğini belirt.\n3. KİŞİSEL SAĞLIK VERİSİ VE KVKK: Kullanıcı kendi kişisel sağlık verilerini (ağrı şikayeti, hastalık geçmişi, röntgen/tetkik sonucu vb.) paylaşırsa, genel bilgilendirme ile birlikte mutlaka Kişisel Verileri Koruma (KVKK) Aydınlatma Metni bağlantısını ([KVKK Aydınlatma Metni](http://localhost:5678/kvkk)) paylaş ve hekime yönlendir.\n4. DİL VE ÜSLUP: Her zaman akıcı, sade, empatik ve anlaşılır bir Türkçe kullan.\n5. GİZLİLİK: Kullanıcıdan T.C. kimlik numarası, açık adres, telefon gibi kimlik/iletişim bilgileri isteme."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ai-agent-1",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash",
+        "options": {
+          "temperature": 0.3
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        240
+      ],
+      "id": "gemini-chat-model-1",
+      "name": "Google Gemini Chat Model"
+    },
+    {
+      "parameters": {
+        "tableName": "n8n_chat_histories",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        120,
+        240
+      ],
+      "id": "postgres-memory-1",
+      "name": "Postgres Chat Memory"
+    }
+  ],
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
