@@ -1,0 +1,61 @@
+{
+  "name": "DisAsistan - KVKK Aydinlatma Metni Sayfasi",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "kvkk",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        0
+      ],
+      "id": "kvkk-webhook-1",
+      "name": "Webhook (GET /kvkk)",
+      "webhookId": "kvkk-aydinlatma-metni"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "<!DOCTYPE html>\n<html lang=\"tr\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>KVKK Aydınlatma Metni — DişAsistan</title>\n  <style>\n    body { font-family: system-ui, -apple-system, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; line-height: 1.65; color: #1e293b; background: #f8fafc; }\n    .card { background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }\n    h1 { color: #0f766e; margin-top: 0; font-size: 1.6rem; }\n    h2 { color: #0f172a; font-size: 1.15rem; margin-top: 24px; }\n    .warn { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 6px; margin: 16px 0; }\n  </style>\n</head>\n<body>\n  <div class=\"card\">\n    <h1>Kişisel Verilerin Korunması (KVKK) Aydınlatma Metni</h1>\n    <p><strong>Proje:</strong> DişAsistan — Ağız ve Diş Sağlığı AI Chatbot (PRJIC20250202)</p>\n    <p><strong>Dayanak:</strong> 6698 Sayılı Kişisel Verilerin Korunması Kanunu (KVKK)</p>\n    <h2>1. Veri İşleme Amacı</h2>\n    <p>Bu uygulama, ağız ve diş sağlığı konusunda genel bilgilendirme sağlamak amacıyla geliştirilmiştir. Sohbet geçmişiniz konuşma bağlamının korunması için yerel PostgreSQL veritabanında oturum kimliği (sessionId) ile saklanmaktadır.</p>\n    <h2>2. Özel Nitelikli Kişisel Veriler (Sağlık Verileri)</h2>\n    <div class=\"warn\">\n      <strong>Önemli Uyarı:</strong> Bu chatbot bir eğitim ve bilgilendirme prototipidir. Lütfen sohbet sırasında T.C. kimlik numarası, ad-soyad, telefon, adres veya gerçek tıbbi raporlarınızı paylaşmayınız. Bulut tabanlı LLM (Google Gemini Free Tier) kullanıldığı için hassas sağlık verilerinizi girmemeniz önerilir.\n    </div>\n    <h2>3. Tıbbi Sorumluluk Reddi</h2>\n    <p>Sunulan yanıtlar tıbbi tanı, teşhis veya tedavi yerine geçmez. Tüm şikayetleriniz için mutlaka bir diş hekimine başvurunuz.</p>\n    <h2>4. İlgili Kişi Hakları</h2>\n    <p>6698 sayılı KVKK'nın 11. maddesi kapsamında kişisel verilerinizin işlenip işlenmediğini öğrenme ve verilerinizin silinmesini talep etme haklarına sahipsiniz.</p>\n  </div>\n</body>\n</html>",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=utf-8"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        40,
+        0
+      ],
+      "id": "kvkk-respond-1",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "connections": {
+    "Webhook (GET /kvkk)": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
