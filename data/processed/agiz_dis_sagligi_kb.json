@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "baslik": "Doğru Diş Fırçalama Tekniği ve Sıklığı",
+    "kategori": "Günlük Ağız Hijyeni",
+    "kaynak": "T.C. Sağlık Bakanlığı / Türk Dişhekimleri Birliği",
+    "icerik": "Dişler günde en az iki kez (sabah kahvaltıdan sonra ve gece yatmadan önce), her seferinde en az 2 dakika boyunca fırçalanmalıdır. Orta sertlikte veya yumuşak kıllı, küçük başlıklı bir diş fırçası tercih edilmelidir. Fırça diş eti çizgisine 45 derecelik açıyla yerleştirilmeli, diş etinden dişe doğru süpürme ve dairesel hareketlerle tüm yüzeyler (dış, iç ve çiğneme yüzeyleri) fırçalanmalıdır. Sert yatay fırçalama diş minesini aşındırabilir ve diş eti çekilmesine yol açabilir. Diş fırçası her 3 ayda bir veya kılları aşındığında değiştirilmelidir."
+  },
+  {
+    "id": 2,
+    "baslik": "Diş İpi ve Arayüz Fırçası Kullanımı",
+    "kategori": "Günlük Ağız Hijyeni",
+    "kaynak": "Türk Dişhekimleri Birliği (TDB)",
+    "icerik": "Diş fırçası dişlerin yalnızca ön, arka ve çiğneme yüzeylerini temizler; diş aralarındaki dar bölgelere ulaşamaz. Bu nedenle günde en az bir kez, tercihen gece yatmadan önce diş fırçalamadan hemen önce diş ipi kullanılmalıdır. Yaklaşık 40 cm diş ipi iki orta parmağa sarılarak diş etini zedelemeden C harfi şeklinde dişe yaslanıp aşağı-yukarı hareketle plak temizlenir. Diş araları geniş olan kişilerde veya köprü/implant çevresinde diş ipine ek olarak arayüz fırçası kullanımı önerilir."
+  },
+  {
+    "id": 3,
+    "baslik": "Dil Temizliği ve Ağız Gargarası Kullanımı",
+    "kategori": "Günlük Ağız Hijyeni",
+    "kaynak": "T.C. Sağlık Bakanlığı",
+    "icerik": "Dil yüzeyi bakterilerin ve yiyecek artıklarının biriktiği önemli bir bölgedir. Diş fırçalama sonrasında dil temizleyici veya yumuşak bir diş fırçası ile dilin arka kısmından öne doğru nazikçe süpürülmesi ağız kokusunu azaltmaya yardımcı olur. Alkolsüz ağız gargaraları günlük ağız bakımını destekleyebilir ancak hiçbir zaman diş fırçalama ve diş ipi kullanımının yerini tutmaz. Medikal (klorheksidin vb.) gargaralar ise yalnızca diş hekiminin önerdiği süre boyunca kullanılmalıdır."
+  },
+  {
+    "id": 4,
+    "baslik": "Diş Çürükleri Nasıl Oluşur ve Nasıl Önlenir?",
+    "kategori": "Diş Hastalıkları",
+    "kaynak": "Dünya Sağlık Örgütü (WHO) — Oral Health",
+    "icerik": "Diş çürüğü, ağızdaki bakterilerin (özellikle Streptococcus mutans) şeker ve nişastalı gıdaları parçalayarak asit üretmesi sonucu diş minesinin demineralize olmasıyla oluşur. Başlangıç aşamasında beyaz tebeşirimsi lekeler görülür ve ağrı olmayabilir. Çürük dentine ve pulpaya ilerlediğinde sıcak-soğuk hassasiyeti ve ağrı başlar. Korunmak için şekerli ve asitli yiyecek-içecek tüketimi sınırlandırılmalı, öğün aralarında atıştırmadan kaçınılmalı, florürlü diş macunu ile düzenli fırçalama yapılmalı ve 6 ayda bir diş hekimi kontrolüne gidilmelidir."
+  },
+  {
+    "id": 5,
+    "baslik": "Diş Eti Hastalıkları: Gingivitis ve Periodontitis",
+    "kategori": "Diş Eti Sağlığı",
+    "kaynak": "Türk Dişhekimleri Birliği (TDB) / WHO",
+    "icerik": "Diş eti hastalıklarının erken evresi gingivitistir. Belirtileri diş etlerinde kızarıklık, şişlik ve fırçalama sırasında kanamadır; bu evre düzenli plak kontrolü ve profesyonel temizlik ile tamamen geri döndürülebilir. Tedavi edilmeyen gingivitis, dişi destekleyen kemiği etkileyen periodontitise ilerleyebilir. Periodontitiste diş eti çekilmesi, dişlerde sallanma, kalıcı ağız kokusu ve diş kaybı görülebilir. Diş eti kanaması normal değildir; böyle bir durumda diş hekimine başvurulmalıdır."
+  },
+  {
+    "id": 6,
+    "baslik": "Diş Taşı (Tartar) Oluşumu ve Temizliği",
+    "kategori": "Diş Eti Sağlığı",
+    "kaynak": "Türk Dişhekimleri Birliği (TDB)",
+    "icerik": "Diş yüzeyinden düzenli temizlenmeyen bakteri plağı, tükürükteki minerallerle birleşerek sertleşir ve diş taşını (tartar) oluşturur. Diş taşı oluştuktan sonra fırçalama ile çıkmaz ve yalnızca diş hekimi tarafından ultrasonik cihazlar ve el aletleri ile temizlenebilir (detertraj). Halk arasında bilinenin aksine, profesyonel diş taşı temizliği diş minesine zarar vermez; aksine diş etlerini korur ve diş kaybını önler. Kişinin ihtiyacına göre genellikle 6 ayda bir kontrol ve gerekirse temizlik önerilir."
+  },
+  {
+    "id": 7,
+    "baslik": "Ağız Kokusu (Halitozis) Nedenleri ve Çözüm Yolları",
+    "kategori": "Ağız Sağlığı",
+    "kaynak": "T.C. Sağlık Bakanlığı / TDB",
+    "icerik": "Ağız kokusunun yaklaşık %85-90'ı ağız içi kaynaklıdır: yetersiz ağız hijyeni, dil sırtındaki bakteri birikimi, diş çürükleri, diş eti hastalıkları, eski ve uyumsuz protezler ile ağız kuruluğu başlıca nedenlerdir. Sarımsak/soğan gibi gıdalar ve sigara da geçici veya kalıcı kokuya yol açar. Ağız içi nedenler elendikten sonra devam eden kokularda sinüzit, reflü veya diyabet gibi sistemik nedenler açısından hekim değerlendirmesi gerekir. Düzenli diş fırçalama, diş ipi, dil temizliği ve bol su tüketimi en etkili önlemlerdir."
+  },
+  {
+    "id": 8,
+    "baslik": "Diş Hassasiyeti (Sıcak, Soğuk ve Tatlıya Karşı Sızı)",
+    "kategori": "Diş Hastalıkları",
+    "kaynak": "NIH / NIDCR",
+    "icerik": "Diş hassasiyeti; soğuk, sıcak, ekşi veya tatlı yiyecek-içecekler tüketildiğinde ortaya çıkan kısa süreli keskin ağrıdır. Diş minesinin aşınması (sert fırçalama, asitli içecekler, diş sıkma/bruksizm) veya diş eti çekilmesi sonucu alttaki dentin tübüllerinin açığa çıkmasıyla oluşur. Ayrıca yeni bir çürük veya kırık dolgu da hassasiyete benzeyen ağrı yapabilir. Hassasiyet giderici diş macunları ve yumuşak fırça kullanımı semptomları hafifletebilir, ancak kesin nedenin belirlenmesi için diş hekimi muayenesi şarttır."
+  },
+  {
+    "id": 9,
+    "baslik": "Çocuklarda Ağız ve Diş Sağlığı Bakımı",
+    "kategori": "Çocuk Diş Sağlığı",
+    "kaynak": "T.C. Sağlık Bakanlığı / TDB",
+    "icerik": "Bebeklerde ilk süt dişi genellikle 6. ay civarında çıkar ve ilk dişin çıkmasıyla birlikte temizliğe başlanmalıdır. İlk diş muayenesi 1 yaş civarında yapılmalıdır. 0-3 yaş arası çocuklarda bezelyeden küçük (pirinç tanesi kadar), 3-6 yaş arası çocuklarda bezelye tanesi büyüklüğünde yaşa uygun florürlü diş macunu kullanılması önerilir. 6-7 yaşa kadar ebeveynler çocuklarının diş fırçalamasına yardımcı olmalı ve kontrol etmelidir. Süt dişleri alttan gelecek kalıcı dişlerin yerini koruduğu için çürük süt dişleri mutlaka tedavi edilmelidir."
+  },
+  {
+    "id": 10,
+    "baslik": "Hamilelik Döneminde Ağız ve Diş Sağlığı",
+    "kategori": "Özel Dönemler",
+    "kaynak": "T.C. Sağlık Bakanlığı",
+    "icerik": "Hamilelikte artan östrojen ve progesteron hormonları diş etlerinin plağa karşı tepkisini artırarak gebelik gingivitisine (diş eti şişmesi ve kanaması) neden olabilir. Ayrıca sabah bulantıları ve kusma sonucu ağızdaki asit oranı yükselir; kusma sonrası hemen diş fırçalamak yerine önce su veya karbonatlı su ile ağız çalkalanmalı, fırçalama 30 dakika sonraya bırakılmalıdır. Planlı hamilelik öncesi diş hekimi kontrolü önerilir. Gebelikte acil diş tedavileri kadın doğum uzmanının bilgisi dahilinde, özellikle ikinci trimesterde (4-6. aylar) güvenle yapılabilmektedir."
+  },
+  {
+    "id": 11,
+    "baslik": "Diyabet (Şeker Hastalığı) ve Ağız Sağlığı İlişkisi",
+    "kategori": "Sistemik Hastalıklar ve Ağız Sağlığı",
+    "kaynak": "NIH / NIDCR & WHO",
+    "icerik": "Diyabet ve diş eti hastalıkları çift yönlü bir ilişkiye sahiptir. Kan şekeri kontrolsüz olan diyabet hastalarında bağışıklık yanıtı zayıfladığı için diş eti iltihabı (periodontitis), ağız kuruluğu ve mantar enfeksiyonları daha sık görülür ve iyileşme yavaşlar. Diğer yandan tedavi edilmeyen şiddetli diş eti iltihabı da kan şekerinin kontrolünü zorlaştırabilir. Diyabet hastalarının düzenli ağız bakımı yapması, kan şekerini dengede tutması ve diş hekimi muayenelerinde diyabet tanısını mutlaka paylaşması önemlidir."
+  },
+  {
+    "id": 12,
+    "baslik": "Florürün Diş Sağlığındaki Rolü",
+    "kategori": "Koruyucu Diş Hekimliği",
+    "kaynak": "Dünya Sağlık Örgütü (WHO) / TDB",
+    "icerik": "Florür, diş minesinin yapısına katılarak asit saldırılarına karşı direnci artıran ve başlangıç aşamasındaki erken çürüklerin yeniden mineralize olmasını (onarılmasını) sağlayan doğal bir mineraldir. Dünya Sağlık Örgütü ve diş hekimliği dernekleri, yaşa uygun miktarda florürlü diş macunu kullanımının güvenli ve çürük önlemede en etkili yöntemlerden biri olduğunu vurgulamaktadır. Çürük riski yüksek bireylerde diş hekimi tarafından topikal florür verniği veya jel uygulamaları yapılabilir."
+  },
+  {
+    "id": 13,
+    "baslik": "20 Yaş (Akıl) Dişleri ve Oluşturabileceği Sorunlar",
+    "kategori": "Ağız Cerrahisi Bilgilendirme",
+    "kaynak": "Türk Dişhekimleri Birliği (TDB)",
+    "icerik": "20 yaş dişleri genellikle 17-25 yaşları arasında süren üçüncü büyük azı dişleridir. Çenede yeterli yer olduğunda ve düzgün pozisyonda sürdüğünde sorun oluşturmaz ve çekilmeleri gerekmez. Ancak gömülü veya yarı gömülü kaldıklarında çevre diş etinde iltihaplanmaya (perikoronit), ağrıya, ağız açmada kısıtlılığa, komşu dişte çürüğe veya baskıya neden olabilir. Her 20 yaş dişinin çekilmesi şart değildir; çekim kararı panoramik röntgen ve diş hekimi muayenesi sonrası verilir."
+  },
+  {
+    "id": 14,
+    "baslik": "Kanal Tedavisi Nedir ve Ne Zaman Gerekir?",
+    "kategori": "Tedavi Bilgilendirme",
+    "kaynak": "NIH / NIDCR & TDB",
+    "icerik": "Kanal tedavisi (endodontik tedavi), derin çürük, çatlak veya travma nedeniyle dişin içindeki canlı dokunun (pulpa/sinir dokusu) iltihaplanması veya ölmesi durumunda dişi çekmeden ağızda tutmak için yapılan işlemdir. İşlemde hasarlı sinir dokusu temizlenir, kök kanalları şekillendirilip dezenfekte edilir ve biyouyumlu bir dolgu maddesiyle kapatılır. Lokal anestezi altında yapıldığı için işlem sırasında ağrı hissedilmez. İşlem sonrası birkaç gün hafif hassasiyet normal kabul edilir; şiddetli veya geçmeyen ağrıda diş hekimine başvurulmalıdır."
+  },
+  {
+    "id": 15,
+    "baslik": "Diş Sıkma ve Gıcırdatma (Bruksizm)",
+    "kategori": "Çene ve Diş Sağlığı",
+    "kaynak": "Türk Dişhekimleri Birliği (TDB)",
+    "icerik": "Bruksizm, kişinin özellikle uyurken veya stres altındayken istemsiz olarak dişlerini sıkması ya da gıcırdatmasıdır. Başlıca belirtileri sabahları çene ve şakak bölgesinde ağrı, çene ekleminden ses gelmesi, dişlerde aşınma, çatlaklar ve soğuk hassasiyetidir. Stres, uyku bozuklukları ve kapanış bozuklukları tetikleyici olabilir. Tedavide kişiye özel hazırlanan gece plağı (okluzal splint) ve altta yatan nedenlerin yönetimi için diş hekimi değerlendirmesi gerekir."
+  },
+  {
+    "id": 16,
+    "baslik": "Ortodonti (Diş Teli ve Şeffaf Plak) Tedavisinde Ağız Bakımı",
+    "kategori": "Ortodonti",
+    "kaynak": "Türk Dişhekimleri Birliği (TDB)",
+    "icerik": "Sabit diş teli (braket) kullanan bireylerde braket çevreleri yiyecek artığı ve plak birikimine çok açıktır. Her yemekten sonra özel ortodontik fırça ve arayüz fırçası ile braketlerin çevresi dikkatlice temizlenmeli, özel diş ipleri (superfloss) veya ağız duşu kullanılmalıdır. Sert, yapışkan yiyeceklerden (fındık, sakız, karamel) ve asitli içeceklerden kaçınılmalıdır. Şeffaf plak (aligner) tedavisinde ise plaklar yemek yerken çıkarılmalı, dişler fırçalandıktan sonra tekrar takılmalıdır."
+  },
+  {
+    "id": 17,
+    "baslik": "Diş İmplantı ve Protez Bakımı",
+    "kategori": "Protetik Diş Tedavisi",
+    "kaynak": "NIH / NIDCR & TDB",
+    "icerik": "Diş implantları, eksik dişlerin yerine çene kemiğine yerleştirilen titanyum veya zirkonyum köklerdir. İmplantların doğal dişler gibi çürüme riski olmasa da çevrelerindeki diş eti ve kemikte 'peri-implantitis' adı verilen iltihap gelişebilir. Bu nedenle implant çevresi düzenli fırçalanmalı, arayüz fırçası veya ağız duşu ile temizlenmeli ve yıllık kontroller aksatılmamalıdır. Hareketli protezler ise her yemekten sonra suyla yıkanmalı, gece çıkarılarak temiz su veya protez temizleme tableti içinde bekletilmelidir."
+  },
+  {
+    "id": 18,
+    "baslik": "Acil Diş Travmaları ve İlk Yardım",
+    "kategori": "Acil Durum Bilgilendirme",
+    "kaynak": "T.C. Sağlık Bakanlığı / TDB",
+    "icerik": "Travma sonucu kalıcı bir diş yerinden tamamen çıkarsa (avülsiyon), dişe kök kısmından değil kuron (üst) kısmından tutulmalıdır. Diş kirliyse akan soğuk su altında en fazla 10 saniye nazikçe yıkanmalı, kesinlikle fırçalanmamalı veya sabunla temizlenmemelidir. Diş mümkünse soğuk süt içinde, serum fizyolojik içinde veya hastanın kendi tükürüğü (yanak içi) içinde korunarak ideal olarak ilk 30-60 dakika içinde acil bir diş hekimine ulaştırılmalıdır. Şiddetli, durmayan kanama veya çene kırığı şüphesinde derhal 112 Acil veya en yakın acil servise başvurulmalıdır."
+  },
+  {
+    "id": 19,
+    "baslik": "Ağız Kanserleri, Risk Faktörleri ve Erken Belirtiler",
+    "kategori": "Koruyucu Diş Hekimliği",
+    "kaynak": "Dünya Sağlık Örgütü (WHO)",
+    "icerik": "Ağız kanserlerinin en önemli risk faktörleri tütün ürünleri kullanımı (sigara, puro, nargile, çiğneme tütünü), aşırı alkol tüketimi ve dudak kanserleri için yoğun güneş ışığına maruziyettir. İki haftadan uzun süredir iyileşmeyen ağız içi yaralar, ağızda açıklanamayan beyaz veya kırmızı lekeler, yutma veya çiğneme güçlüğü, dilde veya boyunda şişlik erken uyarı belirtileri olabilir. İki haftayı geçen her ağız içi lezyon mutlaka bir diş hekimi veya KBB uzmanı tarafından muayene edilmelidir."
+  },
+  {
+    "id": 20,
+    "baslik": "Diş Beyazlatma (Bleaching) Hakkında Genel Bilgi",
+    "kategori": "Estetik Diş Hekimliği",
+    "kaynak": "Türk Dişhekimleri Birliği (TDB)",
+    "icerik": "Diş beyazlatma işlemi, dişlerin minesindeki renklenmeleri gidermek amacıyla diş hekimi kontrolünde yapılan veya hekim tarafından verilen kişiye özel plaklarla evde uygulanan bir işlemdir. İşlem öncesinde çürüklerin ve diş eti sorunlarının tedavi edilmiş olması gerekir. İnternetten veya eczane dışından temin edilen kontrolsüz beyazlatıcı ürünler, karbonat veya limon gibi aşındırıcı ev yöntemleri diş minesine kalıcı zarar verebilir ve ciddi diş eti yanıklarına yol açabilir."
+  }
+]
