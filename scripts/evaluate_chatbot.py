@@ -20,17 +20,23 @@ TEST_FILE = ROOT_DIR / "tests" / "test_sorulari.json"
 
 
 def send_message(chat_url: str, message: str, session_id: str) -> tuple[str, float]:
-    start = time.time()
-    resp = requests.post(
-        chat_url,
-        json={"action": "sendMessage", "sessionId": session_id, "chatInput": message},
-        timeout=60,
-    )
-    elapsed = time.time() - start
-    resp.raise_for_status()
-    data = resp.json()
-    output = data.get("output") or data.get("text") or json.dumps(data, ensure_ascii=False)
-    return output, elapsed
+    for attempt in range(3):
+        start = time.time()
+        resp = requests.post(
+            chat_url,
+            json={"action": "sendMessage", "sessionId": session_id, "chatInput": message},
+            timeout=60,
+        )
+        elapsed = time.time() - start
+        if resp.status_code == 500 and attempt < 2:
+            print("    -> Rate limit (500/429), 20s beklenip tekrar deneniyor...")
+            time.sleep(20)
+            continue
+        resp.raise_for_status()
+        data = resp.json()
+        output = data.get("output") or data.get("text") or json.dumps(data, ensure_ascii=False)
+        return output, elapsed
+    raise RuntimeError("Yeniden denemeler başarısız oldu.")
 
 
 def evaluate_case(case: dict, output: str) -> dict:
@@ -88,7 +94,7 @@ def main() -> None:
         except Exception as e:
             print(f"[{c['id']:02d}] {c['kategori']:<30} | ERROR: {e}")
             results.append({**c, "passed": False, "notes": [str(e)], "output": ""})
-        time.sleep(2)  # Gemini free tier rate limit koruması
+        time.sleep(15)  # Gemini 2.5 Flash free tier 5 RPM limit koruması
 
     passed_count = sum(1 for r in results if r["passed"])
     print(f"\nÖzet: {passed_count}/{len(results)} test başarılı.")

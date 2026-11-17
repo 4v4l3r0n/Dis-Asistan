@@ -7,7 +7,13 @@ AI agent'lar ve bir LLM aracılığıyla kullanıcıların ağız ve diş sağl�
 - **Konuşma geçmişi:** PostgreSQL
 - **Vektör DB:** Qdrant
 
-Detaylı plan: [docs/YOL_HARITASI.md](docs/YOL_HARITASI.md)
+Detaylı dokümantasyon:
+- [Yol Haritası](docs/YOL_HARITASI.md)
+- [Sistem Mimarisi](docs/mimari.md)
+- [Geliştirme Aşamaları](docs/gelistirme_sureci.md)
+- [Veri Kaynakları ve RAG](docs/veri_kaynaklari.md)
+- [KVKK Aydınlatma Metni](docs/kvkk_aydinlatma_metni.md)
+- [Değerlendirme ve Test Raporu](docs/degerlendirme_raporu.md)
 
 ## Kurulum ve Çalıştırma
 
@@ -35,14 +41,26 @@ Bu komut ile şu servisler ayağa kalkacaktır:
 | **Qdrant** | `http://localhost:6333` | Vektör Veritabanı (RAG bilgi tabanı) |
 | **PostgreSQL** | `localhost:5432` | n8n veritabanı ve sohbet hafızası (Chat Memory) |
 
-### 4. n8n İlk Kurulum
-1. Tarayıcınızdan `http://localhost:5678` adresine gidin.
-2. Bir sahip (owner) hesabı oluşturun (ad, e-posta, şifre).
-3. Credentials menüsünden **Google Gemini** ve **Postgres** bağlantılarını tanımlayın.
+### 4. n8n İlk Kurulum ve Workflow'ları Yükleme
+1. Tarayıcınızdan `http://localhost:5678` adresine gidin ve yönetici hesabınızı oluşturun.
+2. **Credentials** bölümünden **Google Gemini API** ve **Postgres** (`Host: postgres`, `Database: n8n`, `User: n8n`) bağlantılarını tanımlayın.
+3. **Qdrant API** bağlantısı için URL alanına `http://qdrant:6333` yazın (API Key boş bırakılır).
+4. `workflows/kvkk_sayfasi.json` ve `workflows/chatbot.json` dosyalarını n8n'e **Import from File...** ile aktarıp yayınlayın (**Publish / Active**).
 
-### 5. Servisleri Durdurma
+### 5. RAG Bilgi Tabanını Qdrant'a Yükleme
+```bash
+pip install requests
+python scripts/ingest_qdrant.py
+```
+
+### 6. Otomatik Değerlendirme Testi
+```bash
+python scripts/evaluate_chatbot.py --url http://localhost:5678/webhook/<CHAT_WEBHOOK_ID>/chat
+```
+
+### 7. Servisleri Durdurma
 ```bash
 docker compose down
 ```
-*(Veriler `volumes/` içinde kalıcı olarak saklanır, silinmez.)*
+*(Veriler Docker volume'larında kalıcı olarak saklanır, silinmez.)*
 
